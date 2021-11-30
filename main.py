@@ -14,5 +14,7 @@ print('Para pesquisar filmes por ano digite 1\n'
 
 pesquisa = int(input())
 if pesquisa == 4:
-      print(db.mostrar_tudo(conexao))
+      lista = db.mostrar_tudo(conexao)
+      for c in lista:
+            print("Filme:", c[0], "| Genero:", c[1], "| Ano:", c[2])
 
