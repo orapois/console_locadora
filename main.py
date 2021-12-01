@@ -27,4 +27,9 @@ if pesquisa == 2:
       lista = db.por_filme(conexao,filme)
       for c in lista:
             print("Filme:", c[0],"| Genero:", c[1], "| Ano:", c[2])
+if pesquisa == 1:
+      ano = input("Digite o ano do filme: ")
+      lista = db.por_ano(conexao,ano)
+      for c in lista:
+            print("Filme:", c[0],"| Genero:", c[1], "| Ano:", c[2])
 

@@ -57,3 +57,15 @@ def por_filme(conexao, txt):
         print("Ocorreu um erro:", e)
     finally:
         return filme
+    
+def por_ano(conexao, txt):
+    filme = None
+    try:
+        var_select = "SELECT titulo, genero.nome, ano from filme, genero WHERE ano = "+ txt +" AND id_genero = genero.id"
+        cursor = conexao.cursor()
+        cursor.execute(var_select)
+        filme = cursor.fetchall()
+    except sqlite3.Error as e:
+        print("Ocorreu um erro:", e)
+    finally:
+        return filme
