@@ -33,3 +33,15 @@ def mostrar_tudo(conexao):
         print("Ocorreu um erro:", e)
     finally:
         return filme
+
+def por_ator(conexao, txt):
+    filme = None
+    try:
+        var_select = "SELECT titulo, genero.nome, ano from filme, genero, atuacao, ator WHERE ator.nome = '"+ txt +"' and ator.id = atuacao.id_ator"
+        cursor = conexao.cursor()
+        cursor.execute(var_select)
+        filme = cursor.fetchall()
+    except sqlite3.Error as e:
+        print("Ocorreu um erro:", e)
+    finally:
+        return filme
