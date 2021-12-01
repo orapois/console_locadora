@@ -11,7 +11,6 @@ def iniciar_conexao():
     try:
         #Conexão com o db
         conexao = sqlite3.connect(arquivo)
-        print("Tudo Ok!", sqlite3.version)
 
     except sqlite3.Error as e:
         #Mostra o erro de conexão
