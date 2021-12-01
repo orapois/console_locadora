@@ -22,3 +22,9 @@ if pesquisa == 3:
       lista = db.por_ator(conexao,ator)
       for c in lista:
             print("Filme:", c[0],"| Genero:", c[1], "| Ano:", c[2])
+if pesquisa == 2:
+      filme = input("Digite o nome do filme: ")
+      lista = db.por_filme(conexao,filme)
+      for c in lista:
+            print("Filme:", c[0],"| Genero:", c[1], "| Ano:", c[2])
+
